@@ -1,0 +1,8 @@
+<div *ngIf="products">
+  <h1>Product List</h1>
+  <ul>
+    <li *ngFor="let currentItem of products">
+      <app-product-component [product]='currentItem'></app-product-component>
+    </li>
+  </ul>
+</div>

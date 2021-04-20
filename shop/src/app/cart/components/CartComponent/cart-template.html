@@ -1,0 +1,20 @@
+<H1>Cart</H1>
+<div *ngIf="!cart.isEmpty(); else cartEmpty">
+  <table>
+    <tr>
+      <td>Items:</td>
+      <td>{{cart.getItemsCount()}}</td>
+    </tr>
+    <tr *ngFor="let cartEntry of cart.cartEntries">
+       <app-cart-entry-component [entry]="cartEntry"></app-cart-entry-component>
+    </tr>
+    <tr>
+      <td>Total:</td>
+      <td>{{cart.total}}</td>
+    </tr>
+  </table>
+</div>
+
+<ng-template #cartEmpty>
+  <h6>Your cart is empty, please add the item</h6>
+</ng-template>
